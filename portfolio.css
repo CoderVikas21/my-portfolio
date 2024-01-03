@@ -4,6 +4,17 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
+
+.app {
+    overflow: hidden;
+    touch-action: pan-up;
+}
+.app canvas {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+}
 body{
     background-color: #0e0e0e;
     background-image: linear-gradient(162deg, #0e0e0e 0%, #31393b 100%); 
@@ -16,6 +27,7 @@ body{
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 } 
+
 .sec2,.sec3{
     background-color: rgb(18, 15, 15);
     width: 90%;
@@ -135,21 +147,37 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.sec1_left{
+    text-align: center;
+}
 .typewrite{
     min-height: 1rem;
     width: 35rem;
     font-size: 1.8rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 4rem;
-    animation: typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+    
     border-right: 4px solid rgb(225, 85, 85);
     overflow: hidden;
     white-space: nowrap;
 }
-@keyframes blink {
-    
+#tw1{
+    animation: typing 1s ease-in 0s 1 forwards,
+    blink-caret .75s step-end infinite ;
 }
+#tw2{
+    animation: typing 2s ease-in 1s 1 forwards,
+    blink-caret .75s step-end infinite ;
+}
+#tw3{
+    animation: typing 2s ease-in 3s 1 forwards,
+    blink-caret .75s step-end infinite ;
+}
+#tw4{
+    animation: typing 2s ease-in 5s 1 forwards,
+    blink-caret .75s step-end infinite ;
+}
+
 #name{
     color: rgb(225, 85, 85);
     font-weight: bold;
@@ -160,9 +188,11 @@ body{
 }
 @keyframes typing{
     from{
+        display: none;
         width: 0rem;
     }
     to{
+        display: block;
         width: 35rem;
     }
 }
@@ -469,6 +499,7 @@ body{
     }
     .sec1_right{
         margin-bottom: 0rem;
+        align-items: center;
     }
     .navright{
         display: none;
