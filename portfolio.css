@@ -334,6 +334,8 @@ body{
     width: 300px;
     height: 16rem;
 }
+
+
 .projects_box:hover{
     border: 1px solid white;
 }
@@ -342,6 +344,7 @@ body{
     width: 100%;
     height: 160px;
 }
+
 .projects_box p{
     padding: 0;
     margin: 0;
@@ -436,14 +439,17 @@ body{
     min-height: 16rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .tech_box{
-    width: 33%;
+    background-color: rgb(22, 21, 21);
+    border-radius: 10px;
+    width: 25%;
     min-height: 16rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:2px 0px
+    margin:10px 30px
 }
 .tech_box p{
     font-size: 2rem;
