@@ -268,17 +268,18 @@ body{
 .profile_content{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
 }
 .profile{
-    width: 300px;
+    width: 290px;
     height: 10rem;
     border-style: revert;
     border-radius: 10px;
     background-color: #02090c;
     background-image: linear-gradient(135deg, #02090c 0%, #363031 100%);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin: 0 5px;
@@ -319,6 +320,7 @@ body{
 }
 .project_container{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     min-height: 16rem;
@@ -488,17 +490,21 @@ body{
     .burger{
         display: block;
     }
+    .navbar{
+        justify-content: start;
+    }
     .navleft{
         background-color: rgb(15, 13, 13);
         display: none;
         width: 20%;
         flex-direction: column;
-        margin: 125px 0 0 0 ;
+        margin: 110px 0 0 0 ;
         z-index: 2;
         opacity: 0.8;
     }
     .sec1_right{
         margin-bottom: 0rem;
+        margin-left: 12rem;
         align-items: center;
     }
     .navright{
