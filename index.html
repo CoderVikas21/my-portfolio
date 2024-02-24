@@ -12,6 +12,7 @@
 <body id="body"> 
     <main>
         <div class="app">
+            <div class="scroll"></div>
             <div class="sec1" id="sec1">
                 <div class="navbar" >
                     <div class="burger" id="burger">
@@ -49,17 +50,22 @@
                 </div>
                <div class="sec1_cont">
                 <div class="sec1_left">
-                    <div id="type">
-                        <h1 class="typewrite" id="tw1">Hey!</h1>
-                        <p class="typewrite" id="tw2">I am <span id="name">VIKAS SANI,</span> </p>
-                        <p class="typewrite" id="tw3">A Young - Passionate - Hardworking,</p>
-                        <p class="typewrite" id="tw4"> Frontend Dev | Leetcode Solver | Coder </p>
+                    <div class="animated_text">
+                        I'm VIKAS, a <span></span>
                     </div>
-                    <button id="download_btn"><a href="https://drive.google.com/file/d/1jxPrzr4BefnqwlQ3XOOTGVW7vlzyNjo5/view?usp=sharing"  target="_blank">Download Resume</a></button>
-                    <button onclick="toContact()" id="contact_btn"><a href="#" target="_blank">Contact Me</a></button>
+                    <p>
+                        Frontend Web Developer with expertise in frontend technologies & building great websites with remarkable UI/UX.
+                    </p>
+                    <div class="sec1_btn">
+
+                        <button id="download_btn"><a href="https://drive.google.com/file/d/1jxPrzr4BefnqwlQ3XOOTGVW7vlzyNjo5/view?usp=sharing"  target="_blank">Download Resume</a></button>
+                        <button onclick="toContact()" id="contact_btn"><a href="#" target="_blank">Contact Me</a></button>
+                    </div>
                 </div>
                 <div class="sec1_right">
-                    <img src="./images/aaaaaa.jpg" id="sec1_img">
+                    <div class="my_img">
+                        <img src="./images/aaaaaa.jpg" id="sec1_img">
+                    </div>
                 </div>
                </div>
             </div>
@@ -157,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sec2" id="sec2">
+            <div class="sec2 " id="sec2">
                 <div class="profilehead">
                     <h1>Coding Profiles</h1>
                 </div>
@@ -253,6 +259,6 @@
         </div>
         
     </main>
-    <script type="module" src="portfolio.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>

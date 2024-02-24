@@ -1,5 +1,5 @@
 
-import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
+// import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
 neonCursor({
   el: document.querySelector('.app'),
@@ -70,20 +70,24 @@ moon.addEventListener('click' , change_mode);
 
 
 function toprojects(){
-	let project = document.querySelector('.project_head');
+	const project = document.querySelector('.project_head');
 	project.scrollIntoView();
 }
 function totechstack(){
-	let tech = document.getElementById('sec3_2');
+	const tech = document.getElementById('sec3_2');
 	tech.scrollIntoView();
 }
 
 function toprofiles(){
-	let profile = document.querySelector('.profilehead');
+	const profile = document.querySelector('.profilehead');
 	profile.scrollIntoView();
 }
 
 function toContact(){
-	let contact = document.querySelector('.form_container');
+	const contact = document.querySelector('.form_container');
 	contact.scrollIntoView();
 }
+
+
+
+

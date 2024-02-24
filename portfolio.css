@@ -1,8 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
     box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
 }
 
 .app {
@@ -16,8 +18,6 @@
     top: 0;
 }
 body{
-    background-color: #0e0e0e;
-    background-image: linear-gradient(162deg, #0e0e0e 0%, #31393b 100%); 
     margin: 0;
     padding: 0;
     color: white;
@@ -26,6 +26,7 @@ body{
     overflow-x: hidden;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(30, 30, 30);
 } 
 
 .sec2,.sec3{
@@ -42,9 +43,23 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* position: sticky;
+}
+.scroll{
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    transform-origin: left;
+    position: fixed;
+    z-index: 5;
     top: 0;
-    z-index: 3; */
+    scale: 0 1;
+    animation: scroll linear;
+    animation-timeline: scroll();
+}
+@keyframes scroll {
+    to{
+        scale: 1 1;
+    }
 }
 .burger{
     cursor: pointer;
@@ -68,15 +83,13 @@ body{
     margin: 0rem 0.8rem;
     border-radius: 2px;
     font-weight: bold;
-   
 }
 .navbtn:hover{
     translate:0px -10px;
     transition: translate 0.33s ease;
-}
-.navbtn:hover{
     transform: scale(1.1);
 }
+
 .navleft{
     min-height: 40px;
     display: flex;
@@ -148,69 +161,97 @@ body{
     align-items: center;
 }
 .sec1_left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.animated_text{
     text-align: center;
-}
-.typewrite{
-    min-height: 1rem;
-    width: 35rem;
-    font-size: 1.8rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 4rem;
+    font-size: 40px;
+    font-weight: 600;
+    min-width: 30vw;
+    border-bottom: 2px solid yellow;
+    padding: 10px;
+    width: 80%;
+  }
+  .sec1_left p{
+    margin-top: 5px;
+    width: 60%;
+    font-size: 20px;
     
-    border-right: 4px solid rgb(225, 85, 85);
-    overflow: hidden;
-    white-space: nowrap;
-}
-#tw1{
-    animation: typing 1s ease-in 0s 1 forwards,
-    blink-caret .75s step-end infinite ;
-}
-#tw2{
-    animation: typing 2s ease-in 1s 1 forwards,
-    blink-caret .75s step-end infinite ;
-}
-#tw3{
-    animation: typing 2s ease-in 3s 1 forwards,
-    blink-caret .75s step-end infinite ;
-}
-#tw4{
-    animation: typing 2s ease-in 5s 1 forwards,
-    blink-caret .75s step-end infinite ;
-}
+  }
+  .sec1_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    width: 60%;
+  }
+  .animated_text span{
+    position: relative;
+  }
+  .animated_text span::before{
+    content: '';
+    color: yellow;
+    animation: words 20s infinite;
+    
+  }
+  .animated_text span::after{
+    content: '';
+    background-color: rgb(30, 30, 30);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid yellow;
+    right: -8px;
+    animation: cursor .8s infinite ,typing 20s steps(14) infinite;
 
-#name{
-    color: rgb(225, 85, 85);
-    font-weight: bold;
-}
-.typewrite p,h1{
-    padding: 0;
-    margin: 0;
-}
-@keyframes typing{
-    from{
-        display: none;
-        width: 0rem;
-    }
+  }
+  @keyframes cursor {
     to{
-        display: block;
-        width: 35rem;
+      border-left: 2px solid transparent;
     }
-}
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: rgb(225, 85, 85); }
+  }
+  @keyframes words {
+    0%,20%{
+      content: 'Frontend-Dev';
+    }
+    21%,40%{
+      content: 'Coder';
+    }
+    41%,60%{
+      content: 'TechGeek';
+    }
+    61%,80%{
+      content: 'Gamer';
+    }
+    81%,100%{
+      content: 'Footballer';
+    }
+  }
+  @keyframes typing {
+    10%, 15%, 30% , 35%, 50%, 55%, 70%,75%,90%,95%{
+      width:0;
+    }
+    5%,20%,25%,40%,60%,65%,80%,85%{
+      width: calc(100% + 8px);
+    }
   }
 
 #download_btn{
     padding: 10px;
     background-color: transparent;
     color: cyan;
-    margin:1.2rem 0rem 0rem 4rem;
     cursor: pointer;
     opacity: 0.5;
     border: 0.5px solid cyan;
     border-radius: 2px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 #download_btn:hover{
     box-shadow: 0px 0px 2px 2px cyan;
@@ -225,7 +266,6 @@ body{
     padding: 10px 15px;
     background-color: cyan;
     border: none;
-    margin: 1.2rem 0rem 0rem 1rem;
     cursor: pointer;
     border-radius: 2px;
 }
@@ -235,20 +275,26 @@ body{
 }
 
 .sec1_right{
-    width:40em;
-    max-height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.my_img{
+    width: 50%;
+    height: 70%;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 10rem;
-    margin-bottom: 10rem;
+    box-shadow: 0 0 20px 1px white;
 }
-.sec1_right img{
+.my_img img{
     width: 100%;
     height: 100%;
     transition: all 1s ease-in;
     scale: 1;
 }
-.sec1_right img:hover{
+.my_img img:hover{
     scale: 1.2;
 }
 
@@ -307,6 +353,7 @@ body{
     height: 0;
 }
 .sec3{
+    margin-top: 40px;
     min-height: 20rem;
     border-radius: 10px;
 }
@@ -357,9 +404,12 @@ body{
     color: white;
 }
 .form_container{
+    border-radius: 4px;
+    width: 50%;
+    background-color: rgb(22, 21, 21);
     display: flex;
     justify-content: center;
-    margin-left: 2rem;
+    margin:  0 auto;
     font-size: 1rem;
 }
 .form_container input{
@@ -371,7 +421,21 @@ body{
     background-color: rgb(238, 159, 13);
     border: none;
 }
-
+.view{
+    animation: view linear;
+    animation-timeline: view();
+}
+@keyframes view {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+ /* footer */
 .footer{
     width: 90%;
     margin: auto;
@@ -414,6 +478,7 @@ body{
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif
 }
+
 .fb5{
     width: 14rem;
     padding: 5px 0px;
@@ -489,6 +554,17 @@ body{
 
 
 @media only screen and (max-width: 990px) {
+    .sec1_left p{
+        width: 100%;
+       
+    }
+    .sec1_btn{
+        width: 90%;
+    }
+    .animated_text{
+        width: 100%;
+        
+    }
     .sec1_cont{
         display: flex;
         flex-direction: column-reverse;
@@ -507,11 +583,6 @@ body{
         margin: 110px 0 0 0 ;
         z-index: 2;
         opacity: 0.8;
-    }
-    .sec1_right{
-        margin-bottom: 0rem;
-        margin-left: 12rem;
-        align-items: center;
     }
     .navright{
         display: none;
