@@ -8,7 +8,6 @@ html{
 }
 
 .app {
-    overflow: hidden;
     touch-action: pan-up;
 }
 .app canvas {
@@ -23,8 +22,6 @@ body{
     color: white;
     font-size: 10px;
     width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: rgb(30, 30, 30);
 } 
@@ -177,13 +174,13 @@ body{
     padding: 10px;
     width: 80%;
   }
-  .sec1_left p{
+.sec1_left p{
     margin-top: 5px;
     width: 60%;
     font-size: 20px;
     
   }
-  .sec1_btn{
+.sec1_btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,16 +188,16 @@ body{
     margin: 40px 0;
     width: 60%;
   }
-  .animated_text span{
+.animated_text span{
     position: relative;
   }
-  .animated_text span::before{
+.animated_text span::before{
     content: '';
     color: yellow;
     animation: words 20s infinite;
     
   }
-  .animated_text span::after{
+.animated_text span::after{
     content: '';
     background-color: rgb(30, 30, 30);
     position: absolute;
